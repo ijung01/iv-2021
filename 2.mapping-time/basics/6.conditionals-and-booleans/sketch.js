@@ -68,13 +68,13 @@ function draw(){
    * zero when the shapes have been pushed entirely off the bottom or right edge of the canvas.
    */
 
-  // horiz += 1
-  // if (horiz > width){
-  //   horiz = 0
-  // }
+  horiz += 1
+  if (horiz > width){
+    horiz = 0
+  }
 
-  // vert += 1
-  // if (vert > height){
-  //   vert = 0
-  // }
+  vert += 1
+  if (vert > height){
+    vert = 0
+  }
 }

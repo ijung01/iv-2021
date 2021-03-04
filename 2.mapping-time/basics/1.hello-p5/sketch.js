@@ -8,14 +8,14 @@ function setup() {
   print(`The P5 canvas is ${width}px wide and ${height}px tall`)
 
   // display out greeting message in medium grey
-  fill(127) // grey value between 0–255
+  fill(200) // grey value between 0–255
   textSize(60) // size in pixels
   text("Hello P5 👋", 90, height/2) // (message, x, y)
 
   // pick a light grey fill and bright red stroke to draw shapes with
   fill(200)         // a single value is greyscale
   stroke(200, 0, 0) // three values are red/green/blue
-  strokeWeight(4)   // line weight in pixels
+  strokeWeight(40)   // line weight in pixels
 
   // draw three shapes
   square(100, 200, 40) // (x, y, size)

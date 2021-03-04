@@ -7,12 +7,17 @@ function setup() {
   stroke(150);
   strokeWeight(4);
 
+  var orange = 99 
+  
+  print(orange)
+
   // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
   // define three variables to determine how & where our lines will be drawn
   var x = 90;
   var y = 120;
   var w = 180;
+  
   print(`left side: x:${x} y:${y} w:${w}`)
 
   // draw the leftmost group of four lines
@@ -26,18 +31,18 @@ function setup() {
   // Change the values in the variables
   x = x + w;
   y = height - y;
-  print(`middle: x:${x} y:${y} w:${w}`)
+  // print(`middle: x:${x} y:${y} w:${w}`)
 
-  // draw the middle batch of lines
-  // (note that the line drawing code is identical to the previous batch)
+  // // draw the middle batch of lines
+  // // (note that the line drawing code is identical to the previous batch)
   line(x, y, x+w, y);
   line(x, y+10, x+w, y+10);
   line(x, y+20, x+w, y+20);
   line(x, y+30, x+w, y+30);
 
-  // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+  // // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-  // Change the variables again in the exact same way (but to different effect)
+  // // Change the variables again in the exact same way (but to different effect)
   x = x + w;
   y = height - y;
   print(`right side: x:${x} y:${y} w:${w}`)

@@ -60,17 +60,20 @@ function setup() {
 
   fill('limegreen')
   translate(125, 0)
-  _.times(6, i => {
+
+  var numDots = 15
+
+  _.times(numDots, i => {
     circle(0, i*spacing, radius)
   })
 
   pop()
 
-  translate(100, 400)
-  var xPositions = [0, 5, 10, 20, 40, 80, 160, 320, 640]
-  xPositions.forEach( (x, i) => {
-    stroke(255 - 30*i)
-    line(x, 0, x, 150)
-  })
+  // translate(100, 400)
+  // var xPositions = [0, 5, 10, 20, 40, 80, 160, 320, 640]
+  // xPositions.forEach( (x, i) => {
+  //   stroke(255 - 30*i)
+  //   line(x, 0, x, 150)
+  // })
 
 }
