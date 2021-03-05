@@ -61,7 +61,7 @@ function setup() {
   fill('limegreen')
   translate(125, 0)
 
-  var numDots = 15
+  var numDots = 5
 
   _.times(numDots, i => {
     circle(0, i*spacing, radius)
