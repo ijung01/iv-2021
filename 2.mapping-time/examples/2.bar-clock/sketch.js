@@ -34,10 +34,10 @@ function draw() {
   }
 
   //draw 3 background bars to indicate the max width
-  // fill(30, 0, 0)
-  // rect(x, y,                         maxWidth,  barHeight)
-  // rect(x, y +    barHeight+spacing,  maxWidth,  barHeight)
-  // rect(x, y + 2*(barHeight+spacing), maxWidth,  barHeight)
+  fill(30, 0, 0)
+  rect(x, y,                         maxWidth,  barHeight)
+  rect(x, y +    barHeight+spacing,  maxWidth,  barHeight)
+  rect(x, y + 2*(barHeight+spacing), maxWidth,  barHeight)
 
   // draw the hours bar at the top...
   fill(80, 0, 0)
