@@ -15,9 +15,9 @@ function pointAt(cx, cy, angle, dist){
 
 function setup() {
   // set the width & height of the sketch
-  createCanvas(400, 850)
-  stroke(0, 0, 0)
-  strokeWeight(2)
+  createCanvas(1100, 300);
+  rectMode(CENTER);
+  strokeWeight(2);
 
   // print the time to the console once at the beginning of the run. try opening up the
   // web inspector and poking around to see the various values the clock function gives you
@@ -27,108 +27,105 @@ function setup() {
 function draw() {
   // check the clock for the current time and unpack some of its fields to generate a time-string
   var now = clock()
+  background('white')
 
+  // for(initialize; test; update){
+  //   ... loop body (i.e., the steps to be repeated)
+  // }
+   // rect(x, y, width, height)
+
+  var discrete = false
+  var spacing = 80
+  var end = 880
+
+  // fill('black')
+  // translate(145, 0)
+  // for (var y=0; y<6; y++){
+  //   circle(y*spacing, 150, 60)
+  // }
+
+  fill('black')
+  translate(110, 0)
+  for (var i=0; i<12; i++){
+    rect(i*spacing, 150, 6, 80)
+  }
+
+  if (discrete){
+    var moonLocation = map(now.moon, 0, 1, 0, end)
+  }else{
+    moonLocation = end* now.progress.moon
+  }
+
+  noFill()
+  circle(moonLocation, 150, 30) 
+  //circle(880, 150, 30)
+  
   // set the background to 'white' – you can also specify colors use integers, hex-color strings and more.
   // note that setting the background also clears the canvas from our previous round of drawing
 
-  var seasonColors = ['orange','forestgreen','firebrick','cornflowerblue']
-  var gradient = chroma.scale(seasonColors).mode('lab')
-  function colorForProgress(pct){
-    return gradient(pct).hex()
-  }
+  // var hrAngle = 0
+  // var minAngle = 135
+  // var secAngle = -90
 
-  var seasonColor = colorForProgress(now.progress.year)
-  background(seasonColor)
+  // var hrHeight = 120 
+  // var minHeight = 160
+  // var secHeight = 400
 
-  var hrAngle = 0
-  var minAngle = 135
-  var secAngle = -90
+//   var discrete = false
 
-  var hrHeight = 120 
-  var minHeight = 160
-  var secHeight = 400
+//   if (discrete) {
+//   var hrLocation = map(now.hour, 0, 23, 0, hrHeight)
+//   var minLocation = map(now.min, 0, 60, 0, minHeight)
+//   var secLocation = map(now.sec, 0, 60, 0, secHeight)
+//   }else{
+//   hrLocation = hrHeight * now.progress.day
+//   minLocation = minHeight * now.progress.hour
+//   secLocation = secHeight * now.progress.min  
+// }
 
-  var discrete = false
+//   // draw a white circle in the center; this marks
+//   // the spot (160, 560) we'll be calculating
+//   // other points on the basis of
+//   // circle(160, 560, 10)
 
-  if (discrete) {
-  var hrLocation = map(now.hour, 0, 23, 0, hrHeight)
-  var minLocation = map(now.min, 0, 60, 0, minHeight)
-  var secLocation = map(now.sec, 0, 60, 0, secHeight)
-  }else{
-  hrLocation = hrHeight * now.progress.day
-  minLocation = minHeight * now.progress.hour
-  secLocation = secHeight * now.progress.min  
-}
+//   // find a new point thats at 0° (i.e., to the right) 
+//   // of the original (starting from x=160 y=560)
+//   // and is 120 pixels away it
+//   var hrPt = pointAt(160, 560, hrAngle, hrHeight)
 
-  // draw a white circle in the center; this marks
-  // the spot (160, 560) we'll be calculating
-  // other points on the basis of
-  // circle(160, 560, 10)
+//   // find a point that's clockwise by 135° (i.e., down and left) 
+//   // from the original (starting from x=160 y=560)
+//   // but is closer this time (only 60 pixels away)
+//   var minPt = pointAt(160, 560, minAngle, 225)
 
-  // find a new point thats at 0° (i.e., to the right) 
-  // of the original (starting from x=160 y=560)
-  // and is 120 pixels away it
-  var hrPt = pointAt(160, 560, hrAngle, hrHeight)
-
-  // find a point that's clockwise by 135° (i.e., down and left) 
-  // from the original (starting from x=160 y=560)
-  // but is closer this time (only 60 pixels away)
-  var minPt = pointAt(160, 560, minAngle, 225)
-
-  // by passing a negative number for the angle we can
-  // find a point that's 90° counter-clockwise
-  var secPt = pointAt(160, 560, secAngle, secHeight)
-
-  var daycolors = ['white', 'black']
-  var gradient = chroma.scale(daycolors).mode('lab')
-  function colorForProgress(pct){
-    return gradient(pct).hex()
-  }
-  
-  //triangle for week.progress
-  var daycolor = colorForProgress(now.progress.day)
+//   // by passing a negative number for the angle we can
+//   // find a point that's 90° counter-clockwise
+//   var secPt = pointAt(160, 560, secAngle, secHeight)
 
   // var speed = map(now.weekday, 1, 7, 0, 16)
   // frameRate(speed)
 
-  fill (daycolor)
-  triangle(160, 160, 160, 560, hrPt.x, hrPt.y)
+  // fill (daycolor)
+  // triangle(160, 160, 160, 560, hrPt.x, hrPt.y)
 
-  frameRate(60)
-
-  // draw a red circle at the first calculated point
-  fill('black')
-  circle(hrLocation+160, 560, 5)
+  // frameRate(60)
 
   // draw a red circle at the first calculated point
-  // inverse–circle(160+minLocation, 720-minLocation, 5)
-  fill('black')
-  circle(160-minLocation, 560+minLocation, 5)
+  // fill('black')
+  // circle(hrLocation+160, 560, 5)
+
+  // // draw a red circle at the first calculated point
+  // // inverse–circle(160+minLocation, 720-minLocation, 5)
+  // fill('black')
+  // circle(160-minLocation, 560+minLocation, 5)
     
-  // draw a red circle at the first calculated point
-  // inverse—circle(160, secLocaton+160, 5) 
-  fill('black')
-  circle(160, 560-secLocation, 5)
+  // // draw a red circle at the first calculated point
+  // // inverse—circle(160, secLocaton+160, 5) 
+  // fill('black')
+  // circle(160, 560-secLocation, 5)
   
-  // draw a line from the origin to each dot
-  line(160, 560, hrPt.x, hrPt.y)
-  line(160, 560, minPt.x, minPt.y)
-  line(160, 560, secPt.x, secPt.y)
-
-  // set up typography & drawing-color
-  // textFont("Anonymous Pro") // ← check index.html to see how it was loaded from google-fonts
-  // textSize(42) // make it big
-
-  // draw the time string to the canvas
-  // text(now.text.date, 30, 50)
-  // text(now.text.time, 30, 100)
-  // fill(100, 50, 50)
- 
-  // HARD CODED FORM-UN COMMENT TO SEE AGAIN 
-  // var x = 160; 
-  // var y = 140;
-
-  // line(x, y, x, 4*y);
-  // line(x, 4*y, 0, 5*y);
-  // line(x, 4*y, 1.7*x, 4*y);
+  // // draw a line from the origin to each dot
+  // line(160, 560, hrPt.x, hrPt.y)
+  // line(160, 560, minPt.x, minPt.y)
+  // line(160, 560, secPt.x, secPt.y)
 }
