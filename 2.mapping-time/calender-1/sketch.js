@@ -74,7 +74,7 @@ function draw() {
   fill(mooncolor)
   translate(110, 0)
   for (var i=0; i<12; i++){
-    rect(i*spacing, 150, 3, 80)
+    rect(i*spacing, 150, 2, 80)
   }
 
   // var hrAngle = 0

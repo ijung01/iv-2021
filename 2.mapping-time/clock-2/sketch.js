@@ -83,6 +83,4 @@ function draw() {
 // var nine = color(102, 176, 49)
 // var ten = color(208, 0, 43)
 // var eleven = color(80, 213, 138)
-
-
 }
