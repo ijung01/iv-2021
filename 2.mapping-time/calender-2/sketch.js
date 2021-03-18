@@ -26,11 +26,12 @@ function draw(){
   line(s*10, 0, s*10, height)
   line(s*11, 0, s*11, height)
   line(s*12, 0, s*12, height)
+  line(s*13, 0, s*13, height)
 
   var x = random(now.month*s, now.month*s)
   var y = randomGaussian(height/2, height/8)
-  var r = random(now.day)
-  var c = color(102, 176, 49, random(100))
+  var r = random(now.day*2)
+  var c = color(102, 176, 49, random(30))
 
   // set the color & draw the dot
   // 가로 위치, 세로 위치, 넓이, 높이

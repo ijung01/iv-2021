@@ -62,8 +62,31 @@ function draw() {
   // rect(500-hourWidth, 100, hourWidth, 400)
 
   // 1am to 2am
-  var one = color(134, 0, 175)
-  var two = color(250, 188, 2, secsAlpha)
+
+
+  var pallete = [
+    color(254, 254, 51),
+    color(134, 0, 175),
+    color(250, 188, 2),
+    color(61, 2, 164),
+    color(251, 153, 2),
+    color(2, 70, 254),
+    color(253, 83, 10),
+    color(2, 146, 206),
+    color(254, 39, 18),
+    color(102, 176, 49),
+    color(208, 0, 43),
+    color(80, 213, 138),
+    color(254, 254, 51)
+  ]
+
+  // var one = color(134, 0, 175)
+  // var two = color(250, 188, 2, secsAlpha)
+
+  var one = pallete[now.hour-1] 
+  var two = pallete[now.hour]
+  two.setAlpha(secsAlpha)
+
   fill(one)
   rect(100, 100, 400-hourWidth, 400)
 
@@ -71,6 +94,7 @@ function draw() {
   rect(500-hourWidth, 100, hourWidth, 400)
 
 // colors for each hour
+
 // var zero = color(254, 254, 51)
 // var one = color(134, 0, 175)
 // var two = color(250, 188, 2)
