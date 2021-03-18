@@ -46,6 +46,10 @@ function setup() {
   circle(0, 4*spacing, radius)
   circle(0, 5*spacing, radius)
 
+  // for(initialize; test; update){
+  //   ... loop body (i.e., the steps to be repeated)
+  // }
+
   fill('orange')
   translate(125, 0)
   for (var i=0; i<6; i++){

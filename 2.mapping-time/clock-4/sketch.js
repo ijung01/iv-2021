@@ -17,7 +17,7 @@ function setup() {
   // set the width & height of the sketch
   createCanvas(1100, 300);
   rectMode(CENTER);
-  strokeWeight(2);
+  
 
   // print the time to the console once at the beginning of the run. try opening up the
   // web inspector and poking around to see the various values the clock function gives you
@@ -27,7 +27,14 @@ function setup() {
 function draw() {
   // check the clock for the current time and unpack some of its fields to generate a time-string
   var now = clock()
-  background('white')
+  var mooncolors = ['darkslateblue', 'palevioletred', 'moccasin']
+  var gradient = chroma.scale(mooncolors).mode('lab')
+  function colorForProgress(pct){
+    return gradient(pct).hex()
+  }
+  
+  var mooncolor = colorForProgress(now.moon)
+  background('black')
 
   // for(initialize; test; update){
   //   ... loop body (i.e., the steps to be repeated)
@@ -37,6 +44,7 @@ function draw() {
   var discrete = false
   var spacing = 80
   var end = 880
+  var moon = 70
 
   // fill('black')
   // translate(145, 0)
@@ -44,24 +52,30 @@ function draw() {
   //   circle(y*spacing, 150, 60)
   // }
 
-  fill('black')
-  translate(110, 0)
-  for (var i=0; i<12; i++){
-    rect(i*spacing, 150, 6, 80)
+  if (discrete){
+    var moonLocation = map(now.progress.moon, 0, 1, 0, end)
+  }else{
+    moonLocation = end * now.progress.moon
   }
 
   if (discrete){
-    var moonLocation = map(now.moon, 0, 1, 0, end)
+    var moonBrightness = map(now.moon, 0, 1, 0, moon)
   }else{
-    moonLocation = end* now.progress.moon
+    moonBrightness = moon * now.moon + 10
   }
 
   noFill()
-  circle(moonLocation, 150, 30) 
+  stroke(mooncolor)
+  strokeWeight(2)
+  // fill(mooncolor)
+  circle(moonLocation+110, 150, moonBrightness) 
   //circle(880, 150, 30)
-  
-  // set the background to 'white' – you can also specify colors use integers, hex-color strings and more.
-  // note that setting the background also clears the canvas from our previous round of drawing
+
+  fill(mooncolor)
+  translate(110, 0)
+  for (var i=0; i<12; i++){
+    rect(i*spacing, 150, 3, 80)
+  }
 
   // var hrAngle = 0
   // var minAngle = 135

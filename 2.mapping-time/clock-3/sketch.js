@@ -31,7 +31,8 @@ function draw() {
   // set the background to 'white' – you can also specify colors use integers, hex-color strings and more.
   // note that setting the background also clears the canvas from our previous round of drawing
 
-  var seasonColors = ['orange','forestgreen','firebrick','cornflowerblue']
+  // code for mapping 4 different colors to progress of the year (season)
+  var seasonColors = ['orange', 'forestgreen', 'firebrick', 'cornflowerblue']
   var gradient = chroma.scale(seasonColors).mode('lab')
   function colorForProgress(pct){
     return gradient(pct).hex()
@@ -88,33 +89,47 @@ function draw() {
   //triangle for week.progress
   var daycolor = colorForProgress(now.progress.day)
 
+  // code that didn't work...
   // var speed = map(now.weekday, 1, 7, 0, 16)
   // frameRate(speed)
 
   fill (daycolor)
   triangle(160, 160, 160, 560, hrPt.x, hrPt.y)
-
   frameRate(60)
 
-  // draw a red circle at the first calculated point
-  fill('black')
-  circle(hrLocation+160, 560, 5)
-
-  // draw a red circle at the first calculated point
-  // inverse–circle(160+minLocation, 720-minLocation, 5)
-  fill('black')
-  circle(160-minLocation, 560+minLocation, 5)
-    
-  // draw a red circle at the first calculated point
-  // inverse—circle(160, secLocaton+160, 5) 
-  fill('black')
-  circle(160, 560-secLocation, 5)
-  
   // draw a line from the origin to each dot
   line(160, 560, hrPt.x, hrPt.y)
   line(160, 560, minPt.x, minPt.y)
   line(160, 560, secPt.x, secPt.y)
 
+   // code for switching between am and pm 
+   var fillColor
+   if (now.am){
+       fillColor = color('black')
+   }else{
+       fillColor = color('white')
+     }
+
+   var strokeColor
+   if (now.am){
+       strokeColor = color('white')
+   }else{
+       strokeColor = color('black')
+     }
+
+  //circle for hour
+  fill(fillColor)
+  stroke(strokeColor)
+  circle(hrLocation+160, 560, 5)
+
+  // circle for minute
+  // inverse–circle(160+minLocation, 720-minLocation, 5)
+  circle(160-minLocation, 560+minLocation, 5)
+    
+  // circle for seconds
+  // inverse—circle(160, secLocaton+160, 5) 
+  circle(160, 560-secLocation, 5)
+  
   // set up typography & drawing-color
   // textFont("Anonymous Pro") // ← check index.html to see how it was loaded from google-fonts
   // textSize(42) // make it big
