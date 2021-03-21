@@ -20,7 +20,7 @@ function draw() {
   var hourColor
   if (now.am){
     // is true, background color will be white
-      hourColor = color('white')
+      hourColor = color('aliceblue')
   }else{
     // if false, background color will be black
       hourColor = color('black')
