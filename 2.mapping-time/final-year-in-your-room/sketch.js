@@ -1,12 +1,3 @@
-// ARGUMENTS
-// cx: the x coordinate of the origin point
-// cy: the y coordinate of the origin point
-// angle: direction of the step we'll be taking away 
-//        from the origin point. 0° means 'to the right'
-//        and the angles run clockwise from there
-// dist: number of pixels our calculated point will be 
-//       away from the origin (in the direction specified
-//       by the `angle` argument)
 function pointAt(cx, cy, angle, dist){
   var theta = angle/360 * TWO_PI
   return {x:cx+cos(theta) * dist, 
@@ -15,7 +6,7 @@ function pointAt(cx, cy, angle, dist){
 
 function setup() {
   // set the width & height of the sketch
-  createCanvas(400, 850)
+  createCanvas(282, 720)
   stroke(0, 0, 0)
   strokeWeight(2)
 
@@ -47,9 +38,11 @@ function draw() {
 
   var hrHeight = 120 
   var minHeight = 160
-  var secHeight = 400
+  var secHeight = 560
 
   var discrete = false
+  var moonLocation = minHeight * now.progress.week
+  var monthLocation = map(now.progress.year, 0, 1, 0, 282)
 
   if (discrete) {
   var hrLocation = map(now.hour, 0, 23, 0, hrHeight)
@@ -80,7 +73,9 @@ function draw() {
   // find a point that's 90° counter-clockwise
   var secPt = pointAt(160, 560, secAngle, secHeight)
 
-  var daycolors = ['white', 'black']
+  // to really mimic the sunlight 
+  // var daycolors = ['black', 'dimgray', 'gray', 'white', 'dimgray', 'black']
+  var daycolors = ['gray', 'white', 'gray']
   var gradient = chroma.scale(daycolors).mode('lab')
   function colorForProgress(pct){
     return gradient(pct).hex()
@@ -89,13 +84,13 @@ function draw() {
   //triangle for week.progress
   var daycolor = colorForProgress(now.progress.day)
 
-  // code that didn't work...
-  // var speed = map(now.weekday, 1, 7, 0, 16)
-  // frameRate(speed)
-
-  fill (daycolor)
-  triangle(160, 160, 160, 560, hrPt.x, hrPt.y)
+  push()
+  blendMode(OVERLAY)
+  fill(daycolor)
+  noStroke()
+  triangle(monthLocation, 0, 160-moonLocation, 560+moonLocation, hrPt.x+2, hrPt.y)
   frameRate(60)
+  pop()
 
   // draw a line from the origin to each dot
   line(160, 560, hrPt.x, hrPt.y)
@@ -129,21 +124,4 @@ function draw() {
   // circle for seconds
   // inverse—circle(160, secLocaton+160, 5) 
   circle(160, 560-secLocation, 5)
-  
-  // set up typography & drawing-color
-  // textFont("Anonymous Pro") // ← check index.html to see how it was loaded from google-fonts
-  // textSize(42) // make it big
-
-  // draw the time string to the canvas
-  // text(now.text.date, 30, 50)
-  // text(now.text.time, 30, 100)
-  // fill(100, 50, 50)
- 
-  // HARD CODED FORM-UN COMMENT TO SEE AGAIN 
-  // var x = 160; 
-  // var y = 140;
-
-  // line(x, y, x, 4*y);
-  // line(x, 4*y, 0, 5*y);
-  // line(x, 4*y, 1.7*x, 4*y);
 }

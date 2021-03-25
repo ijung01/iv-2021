@@ -10,6 +10,8 @@ function draw(){
   var now = clock()
   var s = 50
 
+  stroke('white')
+
   // month dividers 
   line(0, 0, width, 0);
   line(0, height, width, height);
