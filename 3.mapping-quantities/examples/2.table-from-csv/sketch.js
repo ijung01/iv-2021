@@ -70,7 +70,7 @@ function setup(){
 
   // var hrLocation = map(now.hour, 0, 23, 0, hrHeight)
 
-  fill('rgba(255, 50, 0,.25)')
+  fill('rgba(255, 50, 0, 0.25)')
 
   x = 200
   for (var r=0; r<tablelayered.getRowCount(); r++){
@@ -83,8 +83,5 @@ function setup(){
     }
     x += colWidth
   }
-
-
-
-
+  
 }
