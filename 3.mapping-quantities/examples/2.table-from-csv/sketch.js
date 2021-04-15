@@ -53,7 +53,7 @@ function setup(){
     x += colWidth
   }
 
-  fill('rgba(0, 255, 20,.25)')
+  // fill('rgba(0, 255, 20,.25)')
 
   // print out the total for each country, one column at a time
   x = 200
@@ -62,6 +62,9 @@ function setup(){
     for (var c=1; c<table.getColumnCount(); c++){
       var value = table.getNum(r, c)
       // text(value, x, y)
+
+      var opacity = map(value, 0, 5, 0, 1)
+      fill(`rgba(0, 255, 20, ${opacity})`)
       circle(x, y-4, value*18)
       y += rowHeight
     }
@@ -69,8 +72,7 @@ function setup(){
   }
 
   // var hrLocation = map(now.hour, 0, 23, 0, hrHeight)
-
-  fill('rgba(255, 50, 0, 0.25)')
+  // fill('rgba(255, 50, 0, 0.25)')
 
   x = 200
   for (var r=0; r<tablelayered.getRowCount(); r++){
@@ -78,10 +80,15 @@ function setup(){
     for (var c=1; c<tablelayered.getColumnCount(); c++){
       var value = tablelayered.getNum(r, c)
       // text(value, x, y)
+
+      var opacity = map(value, 0, 100, 0, 1)
+      print (value,opacity)
+
+      fill(`rgba(255, 50, 0, ${opacity})`)
       circle(x, y-4, value)
       y += rowHeight
     }
     x += colWidth
   }
-  
+
 }
