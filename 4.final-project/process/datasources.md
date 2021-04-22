@@ -27,7 +27,7 @@ Provider: Korean Statistical Infomration Service
 Format: Online Chart 
 URL: https://kosis.kr/statHtml/statHtml.do?orgId=114&tblId=DT_114054_016
 
-Description:
-Provider:
-Format:
-URL:
+Description: Study of Time Perception 
+Provider: Frontier 
+Format: Online Post/Images 
+URL: https://www.frontiersin.org/articles/10.3389/fnhum.2018.00074/full
