@@ -31,3 +31,5 @@ What are the next steps?
 compare colors between different places 
 finding research that has already been done and then using their data (for visulaizing)
 -traumatic experience "perception of the moment vs remeber every second" 
+
+*possible resources: https://ourworldindata.org/, 
