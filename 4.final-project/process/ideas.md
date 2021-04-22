@@ -10,6 +10,7 @@ What are the next steps?
 1. We write (language) to express and communicate. What are some hidden information that we can uncover from writings? Could the results give us more insight into the contnet or is it irrelavant information? If it is irrelavant, how can we highlight information that is hidden in written langauge? 
 
 2. Sound is defined by its presence and absence. From marking the silences in everyday conversations, lectures/talks, scripts, and music, what understandings can we get on how the intentional vs unintentional moments of silence shape meaning? or can we even identiy if they are intentional or unintentional? crucial or supplementary? 
+*patterns of behavior are recorded as well (login records, physical location, etc)
 
 3. We use images to represent us. Words that describes us. Reputations and emotions to define us. But in what ways do we quantify ourselves? How are numbers related to your identity? What are some ways we are represetned, identified, and translated through alphanumeric values? (exploring different ways of personal identifiaction). 
 
@@ -26,3 +27,7 @@ What are the next steps?
 9. Personal research on understanding being bilingual. When do I use English vs Korean and what can I understand about myself documenting those usages? Does a certain type of personality/emotion/character manifest itself more through a certain language? 
 
 10. When is the most quiest time of the day in the city (considering it as a whole)? Looking into the multiple factors that create noise in public spaces (public transporation, human acticity, etc). 
+
+compare colors between different places 
+finding research that has already been done and then using their data (for visulaizing)
+-traumatic experience "perception of the moment vs remeber every second" 
