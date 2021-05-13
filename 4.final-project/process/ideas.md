@@ -1,16 +1,25 @@
 #### Potential project topics & questions
 
 What are some observations you find noteworthy?
+
 What insights could this offer?
+
 How is it related to visualization, what can visualization reveal here?
+
 What new ideas came out of the process of sketching and research?
+
 What are the next steps?
 
 
 1. We write (language) to express and communicate. What are some hidden information that we can uncover from writings? Could the results give us more insight into the contnet or is it irrelavant information? If it is irrelavant, how can we highlight information that is hidden in written langauge? 
+-idea 1: marking a certain word, certain punctation mark, certain sentence structure? 
+-idea 2: pomes... how they should sound rather it may be a intentional break vs no break. show how they vary-mark areas of tension or wordplay that gives us a different sense about the content? 
+-idea 3: a comma, a pause... 
+-idea 4: when we look at rap, we just see lyrics -> but how do we make them sound right? 
 
 2. Sound is defined by its presence and absence. From marking the silences in everyday conversations, lectures/talks, scripts, and music, what understandings can we get on how the intentional vs unintentional moments of silence shape meaning? or can we even identiy if they are intentional or unintentional? crucial or supplementary? 
 *patterns of behavior are recorded as well (login records, physical location, etc)
+-idea 1: electronic dance music... 
 
 3. We use images to represent us. Words that describes us. Reputations and emotions to define us. But in what ways do we quantify ourselves? How are numbers related to your identity? What are some ways we are represetned, identified, and translated through alphanumeric values? (exploring different ways of personal identifiaction). 
 
@@ -33,3 +42,7 @@ finding research that has already been done and then using their data (for visul
 -traumatic experience "perception of the moment vs remeber every second" 
 
 *possible resources: https://ourworldindata.org/, 
+
+
+
+
